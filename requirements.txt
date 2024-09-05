@@ -1,0 +1,11 @@
+llama-index==0.10.18
+openai==1.30.4
+streamlit
+llama-parse
+llama-index-postprocessor-sbert-rerank
+beautifulsoup4
+git+https://github.com/weatherapicom/python.git#egg=weatherapipython
+llama-index-agent-openai
+llama-index-llms-openai
+llama-index-tools-code-interpreter
+
