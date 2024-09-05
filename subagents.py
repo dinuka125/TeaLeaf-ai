@@ -21,7 +21,19 @@ from apicall import search_news, google_search, web_scraping, realtime_weather,l
 from llama_index.agent.openai import OpenAIAgent
 from llama_index.tools.code_interpreter.base import CodeInterpreterToolSpec
 import streamlit as st 
+import nltk
+import os
 
+# Set the NLTK data path to a writable directory
+nltk.data.path.append("/tmp/nltk_data")
+
+# Download required NLTK data
+nltk_data = ["punkt", "stopwords"]
+for item in nltk_data:
+    try:
+        nltk.data.find(f"tokenizers/{item}")
+    except LookupError:
+        nltk.download(item, download_dir="/tmp/nltk_data")
 
 load_dotenv()
 OpenAI.api_key= st.secrets["OPENAI_API_KEY"]

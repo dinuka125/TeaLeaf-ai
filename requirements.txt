@@ -8,4 +8,6 @@ git+https://github.com/weatherapicom/python.git#egg=weatherapipython
 llama-index-agent-openai
 llama-index-llms-openai
 llama-index-tools-code-interpreter
+Pillow==10.0.0
+nltk==3.8.1
 

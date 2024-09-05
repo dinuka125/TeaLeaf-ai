@@ -15,10 +15,19 @@ from subagents import call_agent1, call_agent2, call_agent3, call_agent4
 from prompts import main_agent_prompt,tealeafai_prompt
 from llama_index.core import PromptTemplate
 from PIL import Image
+import nltk
+import os
 
+# Set the NLTK data path to a writable directory
+nltk.data.path.append("/tmp/nltk_data")
 
-
-
+# Download required NLTK data
+nltk_data = ["punkt", "stopwords"]
+for item in nltk_data:
+    try:
+        nltk.data.find(f"tokenizers/{item}")
+    except LookupError:
+        nltk.download(item, download_dir="/tmp/nltk_data")
 
 # API keys
 serper_api_key = st.secrets["SERP_API_KEY"]
